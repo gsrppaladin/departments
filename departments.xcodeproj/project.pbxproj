@@ -12,6 +12,12 @@
 		FEACA9971EA40D0C007F902D /* departments.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FEACA9951EA40D0C007F902D /* departments.xcdatamodeld */; };
 		FEACA9991EA40D0C007F902D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEACA9981EA40D0C007F902D /* Assets.xcassets */; };
 		FEACA99C1EA40D0C007F902D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEACA99A1EA40D0C007F902D /* LaunchScreen.storyboard */; };
+		FEACA9A61EA43AF4007F902D /* DepartmentTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEACA9A51EA43AF4007F902D /* DepartmentTVC.swift */; };
+		FEACA9A81EA43B1C007F902D /* AddDepartmentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEACA9A71EA43B1C007F902D /* AddDepartmentVC.swift */; };
+		FEACA9AA1EA43BA1007F902D /* DepartmentEmployeeTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEACA9A91EA43BA1007F902D /* DepartmentEmployeeTVC.swift */; };
+		FEACA9AC1EA43BC4007F902D /* EmployeesTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEACA9AB1EA43BC4007F902D /* EmployeesTVC.swift */; };
+		FEACA9AE1EA43BDE007F902D /* AddEmployeeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEACA9AD1EA43BDE007F902D /* AddEmployeeVC.swift */; };
+		FEACA9B01EA43BFA007F902D /* EmployeeTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEACA9AF1EA43BFA007F902D /* EmployeeTVCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +28,12 @@
 		FEACA9981EA40D0C007F902D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FEACA99B1EA40D0C007F902D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FEACA99D1EA40D0C007F902D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FEACA9A51EA43AF4007F902D /* DepartmentTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DepartmentTVC.swift; sourceTree = "<group>"; };
+		FEACA9A71EA43B1C007F902D /* AddDepartmentVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddDepartmentVC.swift; sourceTree = "<group>"; };
+		FEACA9A91EA43BA1007F902D /* DepartmentEmployeeTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DepartmentEmployeeTVC.swift; sourceTree = "<group>"; };
+		FEACA9AB1EA43BC4007F902D /* EmployeesTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmployeesTVC.swift; sourceTree = "<group>"; };
+		FEACA9AD1EA43BDE007F902D /* AddEmployeeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddEmployeeVC.swift; sourceTree = "<group>"; };
+		FEACA9AF1EA43BFA007F902D /* EmployeeTVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmployeeTVCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +66,8 @@
 		FEACA98D1EA40D0B007F902D /* departments */ = {
 			isa = PBXGroup;
 			children = (
+				FEACA9A41EA43A58007F902D /* Employee Files */,
+				FEACA9A31EA43A4D007F902D /* Department Files */,
 				FEACA98E1EA40D0B007F902D /* AppDelegate.swift */,
 				FEACA9921EA40D0C007F902D /* Main.storyboard */,
 				FEACA9981EA40D0C007F902D /* Assets.xcassets */,
@@ -62,6 +76,26 @@
 				FEACA9951EA40D0C007F902D /* departments.xcdatamodeld */,
 			);
 			path = departments;
+			sourceTree = "<group>";
+		};
+		FEACA9A31EA43A4D007F902D /* Department Files */ = {
+			isa = PBXGroup;
+			children = (
+				FEACA9A51EA43AF4007F902D /* DepartmentTVC.swift */,
+				FEACA9A71EA43B1C007F902D /* AddDepartmentVC.swift */,
+			);
+			name = "Department Files";
+			sourceTree = "<group>";
+		};
+		FEACA9A41EA43A58007F902D /* Employee Files */ = {
+			isa = PBXGroup;
+			children = (
+				FEACA9A91EA43BA1007F902D /* DepartmentEmployeeTVC.swift */,
+				FEACA9AB1EA43BC4007F902D /* EmployeesTVC.swift */,
+				FEACA9AD1EA43BDE007F902D /* AddEmployeeVC.swift */,
+				FEACA9AF1EA43BFA007F902D /* EmployeeTVCell.swift */,
+			);
+			name = "Employee Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,7 +172,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				FEACA9971EA40D0C007F902D /* departments.xcdatamodeld in Sources */,
+				FEACA9B01EA43BFA007F902D /* EmployeeTVCell.swift in Sources */,
+				FEACA9AE1EA43BDE007F902D /* AddEmployeeVC.swift in Sources */,
+				FEACA9AC1EA43BC4007F902D /* EmployeesTVC.swift in Sources */,
+				FEACA9AA1EA43BA1007F902D /* DepartmentEmployeeTVC.swift in Sources */,
 				FEACA98F1EA40D0B007F902D /* AppDelegate.swift in Sources */,
+				FEACA9A81EA43B1C007F902D /* AddDepartmentVC.swift in Sources */,
+				FEACA9A61EA43AF4007F902D /* DepartmentTVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
