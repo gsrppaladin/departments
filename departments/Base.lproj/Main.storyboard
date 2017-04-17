@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11761" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11761" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="tPx-Zr-zYE">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -233,8 +233,15 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Add Department" id="szi-4G-SES">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="5cZ-K8-nWD"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="5cZ-K8-nWD">
+                            <connections>
+                                <action selector="savePressed:" destination="cll-6f-hkc" id="mjF-7D-p8T"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="departmentName" destination="hQX-cU-gtp" id="Fq4-oa-10i"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Qc-IY-uIg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
