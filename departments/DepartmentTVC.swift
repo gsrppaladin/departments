@@ -85,7 +85,7 @@ class DepartmentTVC: UITableViewController {
         let departmentObject = departmentsData[indexPath.row]
         let departmentName = departmentObject.value(forKey: "name") as! String
         
-        cell.textLabel?.text = departmentName //departmentsData[indexPath.row].value(forKey: "name") as! String
+        cell.textLabel?.text = departmentName.capitalized //departmentsData[indexPath.row].value(forKey: "name") as! String
      
         
         //now we have access to the nsmanaged object, then call .value for key.
