@@ -67,6 +67,11 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="designationLbl" destination="9K8-eZ-r8W" id="W8E-Yn-u8R"/>
+                                    <outlet property="destinationLbl" destination="Sxr-lq-9eS" id="TPx-GB-Pie"/>
+                                    <outlet property="nameLbl" destination="Rmy-xF-xjC" id="YAV-Gj-OfJ"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
