@@ -11,8 +11,8 @@ import CoreData
 
 class DepartmentTVC: UITableViewController {
 
-    var appDel:  AppDelegate = AppDelegate()
-    var context: NSManagedObjectContext = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
+//    var appDel:  AppDelegate = AppDelegate()
+//    var context: NSManagedObjectContext = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
     
     var departmentsData = [NSManagedObject]()
     
@@ -20,8 +20,8 @@ class DepartmentTVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        appDel = UIApplication.shared.delegate as! AppDelegate
-        context = appDel.persistentContainer.viewContext
+//        appDel = UIApplication.shared.delegate as! AppDelegate
+//        context = appDel.persistentContainer.viewContext
         //with context, we now have access to the core data module.    
         
         self.navigationItem.leftBarButtonItem = self.editButtonItem
@@ -30,31 +30,37 @@ class DepartmentTVC: UITableViewController {
     
     
     override func viewWillAppear(_ animated: Bool) {
-        populateDepartmentsData()
+        //populateDepartmentsData()
+        let sortDescriptor = NSSortDescriptor(key: "name", ascending: true)
+        departmentsData = fetchData(entityName: "Departments", predicate: nil, sortDescriptor: sortDescriptor)
+        
+        tableView.reloadData()
+        
+        
     }
     
 
-    func populateDepartmentsData() {
-        
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Departments")
-        request.resultType = .managedObjectResultType
-        
-        let sortDescriptor = NSSortDescriptor(key: "name", ascending: true)
-        request.sortDescriptors = [sortDescriptor]
-        
-        do {
-            
-           let results = try context.fetch(request)
-            departmentsData = results as! [NSManagedObject]
-            tableView.reloadData()
-            
-        } catch {
-            
-            
-            print("Some Error Occured in Fetching Records.")
-        }
-        
-    }
+//    func populateDepartmentsData() {
+//        
+//        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Departments")
+//        request.resultType = .managedObjectResultType
+//        
+//        let sortDescriptor = NSSortDescriptor(key: "name", ascending: true)
+//        request.sortDescriptors = [sortDescriptor]
+//        
+//        do {
+//            
+//           let results = try context.fetch(request)
+//            departmentsData = results as! [NSManagedObject]
+//            tableView.reloadData()
+//            
+//        } catch {
+//            
+//            
+//            print("Some Error Occured in Fetching Records.")
+//        }
+//        
+//    }
     
     
     

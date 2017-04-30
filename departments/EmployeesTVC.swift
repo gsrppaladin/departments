@@ -13,8 +13,8 @@ class EmployeesTVC: UITableViewController {
 
 
     
-    var appDel:  AppDelegate = AppDelegate()
-    var context: NSManagedObjectContext = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
+//    var appDel:  AppDelegate = AppDelegate()
+//    var context: NSManagedObjectContext = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
     
     var employees = [NSManagedObject]()
     
@@ -26,30 +26,33 @@ class EmployeesTVC: UITableViewController {
 
         
         
-        appDel = UIApplication.shared.delegate as! AppDelegate
-        context = appDel.persistentContainer.viewContext
+//        appDel = UIApplication.shared.delegate as! AppDelegate
+//        context = appDel.persistentContainer.viewContext
         //with context, we now have access to the core data module.
          self.navigationItem.leftBarButtonItem = self.editButtonItem
     }
 
     override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(true)
-        populateEmployees()
+        //populateEmployees()
+//        employees = fetchData(entityName: "Employees")
+        employees = fetchData(entityName: "Employees", predicate: nil, sortDescriptor: nil)
+        
+        tableView.reloadData()
     }
     
-    func populateEmployees() {
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Employees")
-        request.resultType = .managedObjectResultType
-        
-        
-        do {
-            let results = try context.fetch(request)
-            employees = results as! [NSManagedObject]
-            tableView.reloadData()
-        } catch {
-            print("Error in fetching employee Records")
-        }
-    }
+//    func populateEmployees() {
+//        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Employees")
+//        request.resultType = .managedObjectResultType
+//        
+//        
+//        do {
+//            let results = try context.fetch(request)
+//            employees = results as! [NSManagedObject]
+//            tableView.reloadData()
+//        } catch {
+//            print("Error in fetching employee Records")
+//        }
+//    }
     
     // MARK: - Table view data source
 

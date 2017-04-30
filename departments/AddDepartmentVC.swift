@@ -14,15 +14,16 @@ class AddDepartmentVC: UIViewController {
 
     
     @IBOutlet var departmentName: UITextField!
-    var appDel:  AppDelegate = AppDelegate()
-    var context: NSManagedObjectContext = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
+//    var appDel:  AppDelegate = AppDelegate()
+//    var context: NSManagedObjectContext = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
         
-        appDel = UIApplication.shared.delegate as! AppDelegate
-        context = appDel.persistentContainer.viewContext
+//        appDel = UIApplication.shared.delegate as! AppDelegate
+//        context = appDel.persistentContainer.viewContext
         //with context, we now have access to the core data module.
     }
 

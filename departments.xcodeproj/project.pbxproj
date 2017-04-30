@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FE359A861EB679E700BC2C27 /* helper class.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE359A851EB679E700BC2C27 /* helper class.swift */; };
 		FEACA98F1EA40D0B007F902D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEACA98E1EA40D0B007F902D /* AppDelegate.swift */; };
 		FEACA9941EA40D0C007F902D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEACA9921EA40D0C007F902D /* Main.storyboard */; };
 		FEACA9971EA40D0C007F902D /* departments.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FEACA9951EA40D0C007F902D /* departments.xcdatamodeld */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FE359A851EB679E700BC2C27 /* helper class.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "helper class.swift"; sourceTree = "<group>"; };
 		FEACA98B1EA40D0B007F902D /* departments.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = departments.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEACA98E1EA40D0B007F902D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FEACA9931EA40D0C007F902D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -47,6 +49,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FE359A841EB679D400BC2C27 /* Global Scope */ = {
+			isa = PBXGroup;
+			children = (
+				FE359A851EB679E700BC2C27 /* helper class.swift */,
+			);
+			name = "Global Scope";
+			sourceTree = "<group>";
+		};
 		FEACA9821EA40D09007F902D = {
 			isa = PBXGroup;
 			children = (
@@ -66,6 +76,7 @@
 		FEACA98D1EA40D0B007F902D /* departments */ = {
 			isa = PBXGroup;
 			children = (
+				FE359A841EB679D400BC2C27 /* Global Scope */,
 				FEACA9A41EA43A58007F902D /* Employee Files */,
 				FEACA9A31EA43A4D007F902D /* Department Files */,
 				FEACA98E1EA40D0B007F902D /* AppDelegate.swift */,
@@ -171,6 +182,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE359A861EB679E700BC2C27 /* helper class.swift in Sources */,
 				FEACA9971EA40D0C007F902D /* departments.xcdatamodeld in Sources */,
 				FEACA9B01EA43BFA007F902D /* EmployeeTVCell.swift in Sources */,
 				FEACA9AE1EA43BDE007F902D /* AddEmployeeVC.swift in Sources */,
@@ -342,6 +354,7 @@
 				FEACA9A21EA40D0C007F902D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

@@ -20,8 +20,8 @@ class AddEmployeeVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
     @IBOutlet var departmentsPicker: UIPickerView!
     
     
-    var appDel:  AppDelegate = AppDelegate()
-    var context: NSManagedObjectContext = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
+//    var appDel:  AppDelegate = AppDelegate()
+//    var context: NSManagedObjectContext = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
 
     
     var pickerData = [NSManagedObject]()
@@ -29,8 +29,8 @@ class AddEmployeeVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        appDel = UIApplication.shared.delegate as! AppDelegate
-        context = appDel.persistentContainer.viewContext
+//        appDel = UIApplication.shared.delegate as! AppDelegate
+//        context = appDel.persistentContainer.viewContext
         //with context, we now have access to the core data module.
         departmentsPicker.dataSource = self
         departmentsPicker.delegate = self
@@ -38,35 +38,35 @@ class AddEmployeeVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-        populatePickerViewDataSource()
+        
+        //populatePickerViewDataSource()
 //        print(pickerData.count)
-
+        pickerData = fetchData(entityName: "Departments", predicate: nil, sortDescriptor: nil)
     
-    
+        
     }
     
     
-    func populatePickerViewDataSource() {
-     //a fetch request. 
-        
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Departments")
-        request.resultType = .managedObjectResultType
-        
-        do {
-            
-            let results = try context.fetch(request)
-            pickerData = results as! [NSManagedObject]
-            
-            
-        } catch {
-            print("Error in fetching records.")
-        }
-        
-        
-        
-        
-    }
+//    func populatePickerViewDataSource() {
+//     //a fetch request. 
+//        
+//        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Departments")
+//        request.resultType = .managedObjectResultType
+//        
+//        do {
+//            
+//            let results = try context.fetch(request)
+//            pickerData = results as! [NSManagedObject]
+//            
+//            
+//        } catch {
+//            print("Error in fetching records.")
+//        }
+//        
+//        
+//        
+//        
+//    }
 
 
     

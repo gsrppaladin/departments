@@ -11,8 +11,8 @@ import CoreData
 
 class DepartmentEmployeeTVC: UITableViewController {
 
-    var appDel:  AppDelegate = AppDelegate()
-    var context: NSManagedObjectContext = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
+//    var appDel:  AppDelegate = AppDelegate()
+//    var context: NSManagedObjectContext = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
     @IBOutlet var navigationTitle: UINavigationItem!
     
     var selectedDepartment: NSManagedObject?
@@ -23,8 +23,8 @@ class DepartmentEmployeeTVC: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        appDel = UIApplication.shared.delegate as! AppDelegate
-        context = appDel.persistentContainer.viewContext
+//        appDel = UIApplication.shared.delegate as! AppDelegate
+//        context = appDel.persistentContainer.viewContext
         //with context, we now have access to the core data module.
         
     }
@@ -32,33 +32,35 @@ class DepartmentEmployeeTVC: UITableViewController {
     
     
     override func viewWillAppear(_ animated: Bool) {
-        populateEmployees()
+        //populateEmployees()
         let departmentName = selectedDepartment?.value(forKey: "name") as! String
         navigationTitle.title = departmentName
-        
+        let predicate = NSPredicate(format: "department = %@", selectedDepartment!)
+        employees = fetchData(entityName: "Employees", predicate: predicate, sortDescriptor: nil)
+        tableView.reloadData()
     }
 
     
     
-    func populateEmployees() {
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Employees")
-        request.resultType = .managedObjectResultType
-        
-        let predicate = NSPredicate(format: "department = %@", selectedDepartment!)
-        
-        request.predicate = predicate
-        
-        
-        do {
-            let results = try context.fetch(request)
-            employees = results as! [NSManagedObject]
-            
-            tableView.reloadData()
-        } catch {
-            print("Error in fetching department employees records")
-        }
-        
-    }
+//    func populateEmployees() {
+//        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Employees")
+//        request.resultType = .managedObjectResultType
+//        
+//        let predicate = NSPredicate(format: "department = %@", selectedDepartment!)
+//        
+//        request.predicate = predicate
+//        
+//        
+//        do {
+//            let results = try context.fetch(request)
+//            employees = results as! [NSManagedObject]
+//            
+//            tableView.reloadData()
+//        } catch {
+//            print("Error in fetching department employees records")
+//        }
+//        
+//    }
     
 
     // MARK: - Table view data source
