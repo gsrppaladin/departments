@@ -7,45 +7,92 @@
 //
 
 import UIKit
+import CoreData
 
 class DepartmentEmployeeTVC: UITableViewController {
 
+    var appDel:  AppDelegate = AppDelegate()
+    var context: NSManagedObjectContext = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
+    @IBOutlet var navigationTitle: UINavigationItem!
+    
+    var selectedDepartment: NSManagedObject?
+    
+    
+    var employees = [NSManagedObject]()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        appDel = UIApplication.shared.delegate as! AppDelegate
+        context = appDel.persistentContainer.viewContext
+        //with context, we now have access to the core data module.
+        
+    }
+    
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        populateEmployees()
+        let departmentName = selectedDepartment?.value(forKey: "name") as! String
+        navigationTitle.title = departmentName
+        
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    
+    func populateEmployees() {
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Employees")
+        request.resultType = .managedObjectResultType
+        
+        let predicate = NSPredicate(format: "department = %@", selectedDepartment!)
+        
+        request.predicate = predicate
+        
+        
+        do {
+            let results = try context.fetch(request)
+            employees = results as! [NSManagedObject]
+            
+            tableView.reloadData()
+        } catch {
+            print("Error in fetching department employees records")
+        }
+        
     }
+    
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return employees.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
 
         // Configure the cell...
 
+        //remember to grab data from NSManagedbjects
+        let firstName = employees[indexPath.row].value(forKey: "firstName") as! String
+        let lastName = employees[indexPath.row].value(forKey: "lastName") as! String
+        let fullName = firstName + " " + lastName
+        
+        let designation = employees[indexPath.row].value(forKey: "designation") as! String
+        
+        cell.textLabel?.text = fullName
+        cell.detailTextLabel?.text = designation
+        
+        
         return cell
     }
-    */
+   
 
     /*
     // Override to support conditional editing of the table view.
@@ -82,14 +129,11 @@ class DepartmentEmployeeTVC: UITableViewController {
     }
     */
 
-    /*
+
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        
+//    }
 }

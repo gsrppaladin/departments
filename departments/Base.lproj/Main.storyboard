@@ -260,7 +260,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Qc-IY-uIg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1945" y="-353"/>
+            <point key="canvasLocation" x="1926" y="-252"/>
         </scene>
         <!--Employees-->
         <scene sceneID="P6N-o8-kCY">
@@ -302,10 +302,13 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Employees" id="0FL-Cr-hcP"/>
+                    <connections>
+                        <outlet property="navigationTitle" destination="0FL-Cr-hcP" id="C3f-PW-1Kp"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UlA-xE-AkX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2885.5999999999999" y="-353.07346326836586"/>
+            <point key="canvasLocation" x="3705" y="-352"/>
         </scene>
         <!--Departments-->
         <scene sceneID="62x-Dh-oV7">
@@ -333,7 +336,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="F4a-G4-hgI" kind="show" id="9XE-Tn-vhL"/>
+                                    <segue destination="F4a-G4-hgI" kind="show" identifier="showEmployees" id="9XE-Tn-vhL"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

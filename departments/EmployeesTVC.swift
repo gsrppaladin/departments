@@ -69,8 +69,8 @@ class EmployeesTVC: UITableViewController {
 
         // Configure the cell...
         
-        let firstName = employees[indexPath.row].value(forKey: "firstName") as! String
-        let lastName = employees[indexPath.row].value(forKey: "lastName") as! String
+        let firstName: String = employees[indexPath.row].value(forKey: "firstName") as! String
+        let lastName: String = employees[indexPath.row].value(forKey: "lastName") as! String
         let fullName = firstName + " " + lastName
         
         let department = employees[indexPath.row].value(forKey: "department") as! NSManagedObject
@@ -112,11 +112,7 @@ class EmployeesTVC: UITableViewController {
                 print("Record Deleted Successfully.")
             } catch {
                 print("Error with deleting Record")
-            }
-            
-            
-            tableView.deleteRows(at: [indexPath], with: .fade)
-            
+            }            
         }
    
     }

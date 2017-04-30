@@ -30,7 +30,6 @@ class DepartmentTVC: UITableViewController {
     
     
     override func viewWillAppear(_ animated: Bool) {
-        super.viewDidAppear(true)
         populateDepartmentsData()
     }
     
@@ -143,14 +142,21 @@ class DepartmentTVC: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        
+        if segue.identifier == "showEmployees" {
+            
+            let destination = segue.destination as! DepartmentEmployeeTVC
+            let index = tableView.indexPathForSelectedRow?.row
+            destination.selectedDepartment = departmentsData[index!]
+            
+        }
+        
     }
-    */
+ 
 
 }
